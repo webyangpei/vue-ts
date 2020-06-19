@@ -10,5 +10,3 @@
 // import checkToken from '@/utils/checkToken'
 // import { api, api_model } from '~/ui-domain'
 // const qs = require('qs');
-
-// console.log(qs);

@@ -6,14 +6,15 @@ import API_Login from '@/api/login.ts';
 
 const whiteList: string[] = ['/login'];
 
-async function routerBeforeEach(to:any, from:object, next:any) {
+async function routerBeforeEach(to: any, from: object, next: any) {
     const refreshToken: boolean = true;
-    if(refreshToken) {
-        if(to.path === '/login') {
+    if (refreshToken) {
+        if (to.path === '/login') {
             // next({ path: '/' });
             next();
         } else {
-            next();
+            // next();
+            next('/login');
             // 获取用户登录状态
             // const status = await API_Login.getUserInfo()
             // if (status) {
@@ -33,8 +34,9 @@ async function routerBeforeEach(to:any, from:object, next:any) {
             // }
         }
     } else {
-        if(whiteList.includes(to.path)) {
-           next();
+        if (whiteList.includes(to.path)) {
+           // next();
+           next('/login');
         } else {
            next('/login');
         }

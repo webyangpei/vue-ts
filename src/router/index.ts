@@ -17,9 +17,9 @@ const routes: RouteConfig[] = [
   }
 ];
 
+// scrollBehavior: () => { y: 0 },
 const router = new VueRouter({
   mode: 'history',
-  scrollBehavior: (y: any):any => { y: 0 },
   base: process.env.BASE_URL,
   routes
 });
