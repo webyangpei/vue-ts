@@ -5,6 +5,11 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+      app: {
+          device: 'pc',
+          sidebar: 'pc'
+          // permission_routers:
+      }
   },
   mutations: {
   },

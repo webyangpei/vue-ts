@@ -16,6 +16,7 @@
     "ordered-imports": false,
     "quotemark": [true, "single"],
     //    尾逗号
-    "trailing-comma": [ false ]
+    "trailing-comma": [ false ],
+    "no-console": false
   }
 }

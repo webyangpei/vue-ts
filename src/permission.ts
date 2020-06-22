@@ -10,11 +10,9 @@ async function routerBeforeEach(to: any, from: object, next: any) {
     const refreshToken: boolean = true;
     if (refreshToken) {
         if (to.path === '/login') {
-            // next({ path: '/' });
-            next();
+            next({ path: '/' });
         } else {
-            // next();
-            next('/login');
+            next();
             // 获取用户登录状态
             // const status = await API_Login.getUserInfo()
             // if (status) {
@@ -35,8 +33,7 @@ async function routerBeforeEach(to: any, from: object, next: any) {
         }
     } else {
         if (whiteList.includes(to.path)) {
-           // next();
-           next('/login');
+           next();
         } else {
            next('/login');
         }
