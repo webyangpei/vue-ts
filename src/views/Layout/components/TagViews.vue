@@ -1,6 +1,5 @@
 <template>
-	<div>this is tag views!</div>
-	
+	<div class="tag-container">this is tag views!</div>
 </template>
 
 <script lang="ts">
@@ -12,5 +11,7 @@
 </script>
 
 <style lang="stylus" type="text/stylus" scoped>
+  .tag-container {
 
+  }
 </style>
