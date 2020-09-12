@@ -1,5 +1,5 @@
 import { GetterTree } from 'vuex';
-import { AppState } from "@/store/app/types";
+import { AppState } from '@/store/app/types';
 import { RootState } from '../types';
 
 export const getters: GetterTree<AppState, RootState> = {
