@@ -27,11 +27,9 @@
     import {Component, Vue} from 'vue-property-decorator';
     import SideBarItem from './SideBarItem.vue';
 
-    @Component({
-		    components: { SideBarItem }
-    })
+    @Component({components: { SideBarItem }})
     export default class Layout extends Vue {
-        private isCollapse:boolean = false;
+        private isCollapse: boolean = false;
     }
 </script>
 

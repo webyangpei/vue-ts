@@ -3,12 +3,12 @@ import { getters } from './getters';
 import { actions } from './actions';
 import { mutations } from './mutations';
 import { AppState } from './types';
-import { RootState } from "@/store/types";
+import { RootState } from '@/store/types';
 
 export const state: AppState = {
     device: 'pc',
     sidebar: ''
-}
+};
 
 const namespaced: boolean = false;
 

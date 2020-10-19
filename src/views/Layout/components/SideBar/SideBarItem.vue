@@ -35,17 +35,16 @@
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
-    import { State, Action, Getter } from 'vuex-class';
-    import { AppState } from "@/store/app/types";
+    import { Action, Getter } from 'vuex-class';
     const namespace: string = 'app';
 
     @Component({})
     export default class Layout extends Vue {
-        @State('profile') profile: ProfileState;
-        @Action('fetchData', { namespace }) fetchData: any;
-        @Getter('fullName', { namespace }) fullName: string;
+        // @State('profile') profile: ProfileState;
+        @Action('fetchData', { namespace }) private fetchData: any;
+        @Getter('fullName', { namespace }) private fullName: string | undefined;
 
-        mounted() {
+        private mounted() {
             // fetching data as soon as the component's been mounted
             this.fetchData();
         }
