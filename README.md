@@ -1,4 +1,4 @@
-# ts-vue
+# typescript-vue-admin-template
 
 ## Project setup
 ```
@@ -15,5 +15,5 @@ npm run serve
 npm run build
 ```
 # vue-ts
-一个后台管理系统 - 为了用ts进行练手 &amp; 学习使用下vue的 Composition API使用
+一个后台管理系统 - 为了学习typescript进行练手 &amp; 学习使用下vue的 Composition API使用
 

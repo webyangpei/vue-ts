@@ -57,49 +57,49 @@
     export default class TableLayout extends Vue {
         // 是否显示工具栏
         @Prop(Boolean)
-        public toolbar: boolean = false;
+        private toolbar: boolean = false;
 
         // 是否显示分页
         @Prop(Boolean)
-        public pagination: boolean = true;
+        private pagination: boolean = true;
 
         // 是否显示empty
         @Prop(Boolean)
-        public isEmpty: boolean = false;
+        private isEmpty: boolean = false;
 
         // 当前分页数
         @Prop(Number)
-        public pageSize: number = 10;
+        private pageSize: number = 10;
 
         // 当前页
         @Prop(Number)
-        public pageNum: number = 1;
+        private pageNum: number = 1;
 
         // 总条数
         @Prop(Number)
-        public total: number = 1;
+        private total: number = 1;
 
         // 加载状态
         @Prop(Boolean)
-        public loading: boolean = false;
+        private loading: boolean = false;
 
         // 列配置
         @Prop(Array)
-        public columns: any[] = [];
+        private columns: any[] = [];
 
         // 是否显示序列号
         @Prop(Boolean)
-        public showIndex: boolean = false;
+        private showIndex: boolean = false;
 
         // 序列号label
         @Prop(String)
-        public indexLabel: string = '排序';
+        private indexLabel: string = '排序';
 
-        public handlePageCurrentChange(page: number): void {
+        private handlePageCurrentChange(page: number): void {
             this.$emit('current-change', page);
         }
 
-        public handlePageSizeChange(size: number): void {
+        private handlePageSizeChange(size: number): void {
             this.$emit('size-change', size);
         }
     }
