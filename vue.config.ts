@@ -1,12 +1,13 @@
 const path = require('path');
-function resolve (dir) {
-  return path.join(__dirname, dir)
+function resolve (dir: string) {
+  // @ts-ignore
+    return path.join(__dirname, dir)
 }
 module.exports = {
   // 自动保存
   lintOnSave: true,
   // webpack配置
-  chainWebpack: (config)=>{
+  chainWebpack: (config: any)=>{
     config.resolve.alias
       .set('@', resolve('src'))
   },
