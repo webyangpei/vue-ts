@@ -15,17 +15,17 @@ const service = axios.create({
 });
 
 // request 拦截
-service.interceptors.request.use((config:AxiosRequestConfig) => {
+service.interceptors.request.use((config: AxiosRequestConfig) => {
     return config;
-},(error:any) => {
+}, (error: any) => {
     return Promise.reject(error);
 });
 
-service.interceptors.response.use((response:AxiosResponse) => {
+service.interceptors.response.use((response: AxiosResponse) => {
     return response;
-}, (error:AxiosError) => {
+}, (error: AxiosError) => {
     return error;
-})
+});
 
 
 export default service;

@@ -14,18 +14,18 @@ async function routerBeforeEach(to: any, from: object, next: any) {
         } else {
             next();
             // 获取用户登录状态
-            const status = await API_Login.getUserInfo()
+            const status = await API_Login.getUserInfo();
             if (status) {
-                next()
+                next();
                 if (store.getters.addRouters.length === 0) {
                     store.dispatch('GenerateRoutes').then(() => {
-                        router.addRoutes(store.getters.addRouters)
-                        next({ ...to, replace: true })
-                    }).catch(_ => {
-                        MessageBox.alert('验证失败，请重新登录！', '登录出错')
-                    })
+                        router.addRoutes(store.getters.addRouters);
+                        next({ ...to, replace: true });
+                    }).catch(() => {
+                        MessageBox.alert('验证失败，请重新登录', '登录出错');
+                    });
                 } else {
-                    next()
+                    next();
                 }
             }
         }
