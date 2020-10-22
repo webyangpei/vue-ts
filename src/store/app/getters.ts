@@ -1,13 +1,13 @@
-import { GetterTree } from 'vuex';
-import { AppState } from '@/store/app/types';
-import { RootState } from '../types';
+import {GetterTree} from 'vuex';
+import {AppState, Route} from '@/store/app/types';
+import {RootState} from '../types';
 
 export const getters: GetterTree<AppState, RootState> = {
-    fullName(state): string {
-        // const { user } = state;
-        // const firstName = (user && user.firstName) || '';
-        // const lastName = (user && user.lastName) || '';
-        // return `${firstName} ${lastName}`;
-        return 'this is a test';
+    sidebar(state: AppState): string {
+        return state.sidebar;
+    },
+    // 权限数据
+    permission_routers(state: AppState): Route[] | undefined {
+        return state.permission_routers;
     }
 };

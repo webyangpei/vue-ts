@@ -1,5 +1,15 @@
+export interface Route {
+    name?: string;
+    path: string;
+    component: any;
+    redirect?: string;
+    meta?: {
+      title: string;
+      icon: string
+    };
+}
+
 export interface AppState {
-    device: string;
     sidebar: string;
-    // permission_routers?: permission_router
+    permission_routers?: Route[];
 }

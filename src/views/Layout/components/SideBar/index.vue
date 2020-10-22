@@ -1,9 +1,5 @@
 <template>
 	<div class="menu-container">
-		<!--logo-->
-		<div class="logo">
-			<img src="" alt="">
-		</div>
 		<el-menu
 			:default-active="$route.path"
 			class="el-menu-vertical-demo"
@@ -21,9 +17,15 @@
 
 <script lang="ts">
     import {Component, Vue} from 'vue-property-decorator';
+    import {mapGetters} from 'vuex';
     import SideBarItem from './SideBarItem.vue';
 
-    @Component({components: { SideBarItem }})
+    @Component({
+        components: {SideBarItem},
+        computed: {
+            ...mapGetters(['permission_routers'])
+        }
+    })
     export default class Layout extends Vue {
         // 是否展开收起
         private isCollapse: boolean = false;
@@ -31,11 +33,7 @@
 </script>
 
 <style lang="stylus" type="text/stylus" scoped>
- .menu-container {
-	 color #fff
-	 .logo {
-		 width 100%
-		 height 70px
-	 }
- }
+	.menu-container {
+		color #fff
+	}
 </style>

@@ -17,7 +17,7 @@ async function routerBeforeEach(to: any, from: object, next: any) {
             const status = await API_Login.getUserInfo();
             if (status) {
                 next();
-                if (store.getters.addRouters.length === 0) {
+                if (store.getters.permission_routers.length === 0) {
                     store.dispatch('GenerateRoutes').then(() => {
                         router.addRoutes(store.getters.addRouters);
                         next({ ...to, replace: true });
