@@ -30,6 +30,7 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
+    "src/shims-vue.d.ts",
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],

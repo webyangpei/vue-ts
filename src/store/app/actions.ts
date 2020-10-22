@@ -8,7 +8,6 @@ export const actions: ActionTree<AppState, RootState> = {
         axios({
             url: 'https://....'
         }).then((response) => {
-            // const payload: User = response && response.data;
             const payload: any = response && response.data;
             commit('profileLoaded', payload);
         }, (error) => {

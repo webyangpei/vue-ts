@@ -2,7 +2,6 @@ import Vue from 'vue';
 import store from './store';
 import router from './router';
 import API_Login from '@/api/login.ts';
-// import { domain } from '~/ui-domain';
 
 const whiteList: string[] = ['/login'];
 
