@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import VueRouter, { RouteConfig } from 'vue-router';
+import VueRouter, {RouteConfig } from 'vue-router';
 import Layout from '@/views/Layout/index.vue';
 
 Vue.use(VueRouter);
 
-const routes: RouteConfig[] = [
+export const constantRouters: RouteConfig[] = [
     {
         path: '',
         component: Layout,
@@ -13,7 +13,7 @@ const routes: RouteConfig[] = [
             path: 'dashboard',
             component: () => import('@/views/dashboard/index.vue'),
             name: 'dashboard',
-            meta: { title: 'dashboard', icon: 'dashboard' }
+            meta: {title: 'dashboard', icon: 'dashboard'}
         }]
     },
     {
@@ -28,7 +28,26 @@ const routes: RouteConfig[] = [
     }
 ];
 
-const asyncRouter: RouteConfig[] = [
+export const asyncRouter: RouteConfig[] = [
+    // 用户管理 - 用户权限
+    {
+        path: '/user',
+        component: Layout,
+        redirect: '/user/user-list',
+        name: 'user',
+        meta: {
+            title: '用户管理',
+            icon: ''
+        },
+        children: [
+            {
+                path: 'user-list',
+                component: () => import('@/views/user/userList.vue'),
+                name: 'orderList',
+                meta: {title: 'orderList'}
+            }
+        ]
+    },
     {
         path: '*',
         redirect: '/404',
@@ -36,10 +55,12 @@ const asyncRouter: RouteConfig[] = [
     }
 ];
 
+// @ts-ignore
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.PREFIX_URL,
+    routes: constantRouters
 });
 
 export default router;
+

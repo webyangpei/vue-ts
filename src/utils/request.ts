@@ -9,7 +9,7 @@ import store from '@/store';
 // const qs = require('qs');
 
 const service = axios.create({
-    baseURL: process.env.BASEURL,
+    baseURL: process.env.BASE_URL,
     withCredentials: true,
     timeout: 5000,
 });
@@ -22,7 +22,7 @@ service.interceptors.request.use((config: AxiosRequestConfig) => {
 });
 
 service.interceptors.response.use((response: AxiosResponse) => {
-    return response;
+    return response.data;
 }, (error: AxiosError) => {
     return error;
 });

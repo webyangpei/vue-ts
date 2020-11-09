@@ -1,6 +1,9 @@
 import request from '@/utils/request';
 
-// 参数对对象类型
+/**
+ * 获取用户信息
+ * @param params
+ */
 export function getUserInfo(params?: any) {
   return request({
       url: '/api/list',

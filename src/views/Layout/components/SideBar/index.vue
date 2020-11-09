@@ -1,5 +1,6 @@
 <template>
 	<div class="menu-container">
+    {{ permission_routers }}
 		<el-menu
 			:default-active="$route.path"
 			class="el-menu-vertical-demo"
@@ -26,9 +27,14 @@
             ...mapGetters(['permission_routers'])
         }
     })
-    export default class Layout extends Vue {
+    export default class SideBar extends Vue {
         // 是否展开收起
         private isCollapse: boolean = false;
+
+        // get permission_routers(): any[] {
+        //   console.log(this.permission_routers, 7777);
+        //   return this.permission_routers;
+        // }
     }
 </script>
 

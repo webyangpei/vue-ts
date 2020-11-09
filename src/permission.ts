@@ -14,7 +14,8 @@ async function routerBeforeEach(to: any, from: object, next: any) {
         } else {
             next();
             // 获取用户登录状态
-            const status = await API_Login.getUserInfo();
+            // const status = await API_Login.getUserInfo();
+            const status = true;
             if (status) {
                 next();
                 if (store.getters.permission_routers.length === 0) {
