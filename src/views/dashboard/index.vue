@@ -10,9 +10,9 @@
     @Component({})
     export default class Layout extends Vue {
       private testEcharts: any;
-      private $echarts:any;
+      private $echarts: any;
 
-      mounted() {
+      private mounted() {
         this.testEcharts = this.$echarts.init(document.getElementById('test'));
         this.$nextTick(() => {
           setTimeout(this.testEcharts.resize);
@@ -20,29 +20,30 @@
         });
       }
 
-      getEchartsOption () {
-        let girth = [8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0, 11.0, 11.1, 11.2, 11.3, 11.4, 11.4, 11.7, 12.0, 12.9, 12.9, 13.3, 13.7, 13.8, 14.0, 14.2, 14.5, 16.0, 16.3, 17.3, 17.5, 17.9, 18.0, 18.0, 20.6];
+      private getEchartsOption() {
+        // tslint:disable-next-line:max-line-length
+        const girth = [8.3, 8.6, 8.8, 10.5, 10.7, 10.8, 11.0, 11.0, 11.1, 11.2, 11.3, 11.4, 11.4, 11.7, 12.0, 12.9, 12.9, 13.3, 13.7, 13.8, 14.0, 14.2, 14.5, 16.0, 16.3, 17.3, 17.5, 17.9, 18.0, 18.0, 20.6];
 
-        let bins = this.testEcharts.histogram(girth);
+        const bins = this.testEcharts.histogram(girth);
 
         let interval;
         let min = Infinity;
         let max = -Infinity;
 
-        let data = this.testEcharts.util.map(bins.data, function (item: any, index: number) {
-          let x0 = bins.bins[index].x0;
-          let x1 = bins.bins[index].x1;
+        const data = this.testEcharts.util.map(bins.data, (item: any, index: number) => {
+          const x0 = bins.bins[index].x0;
+          const x1 = bins.bins[index].x1;
           interval = x1 - x0;
           min = Math.min(min, x0);
           max = Math.max(max, x1);
           return [x0, x1, item[1]];
         });
 
-        function renderItem(params:any, api:any) {
-          var yValue = api.value(2);
-          var start = api.coord([api.value(0), yValue]);
-          var size = api.size([api.value(1) - api.value(0), yValue]);
-          var style = api.style();
+        function renderItem(params: any, api: any) {
+          const yValue = api.value(2);
+          const start = api.coord([api.value(0), yValue]);
+          const size = api.size([api.value(1) - api.value(0), yValue]);
+          const style = api.style();
 
           return {
             type: 'rect',
@@ -52,11 +53,11 @@
               width: size[0] - 2,
               height: size[1]
             },
-            style: style
+            style
           };
         }
 
-        let option = {
+        const option = {
           title: {
             text: 'Girths of Black Cherry Trees',
             subtext: 'By ecStat.histogram',
@@ -71,9 +72,8 @@
           },
           xAxis: [{
             type: 'value',
-            min: min,
-            max: max,
-            interval: interval
+            min,
+            max
           }],
           yAxis: [{
             type: 'value',
@@ -81,7 +81,7 @@
           series: [{
             name: 'height',
             type: 'custom',
-            renderItem: renderItem,
+            renderItem,
             label: {
               show: true,
               position: 'insideTop'
@@ -92,7 +92,7 @@
               tooltip: 2,
               label: 2
             },
-            data: data
+            data
           }]
         };
         this.testEcharts.setOption(option, true);

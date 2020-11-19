@@ -1,9 +1,8 @@
 <template>
   <div>
-    <router-link v-for="(menu, index) in permission" to="">
-      
+    <router-link v-for="(menu, index) in permission" :key="index" :index="index + menu.name" :to="menu.path">
+
     </router-link>
-<!--    v-for="(menu, index) in permission" :index="index + menu.name"-->
     <el-submenu index="1">
       <template slot="title">
         <i class="el-icon-location"></i>
