@@ -9,6 +9,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
 import '@/styles/index.styl'; // global css
 import './permission.ts';
+import $echarts from 'echarts';
+Vue.prototype.$echarts = $echarts;
+
 
 import Component from 'vue-class-component';
 
