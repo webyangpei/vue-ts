@@ -10,6 +10,7 @@ import 'normalize.css/normalize.css'; // A modern alternative to CSS resets
 import '@/styles/index.styl'; // global css
 import './permission.ts';
 import $echarts from 'echarts';
+
 Vue.prototype.$echarts = $echarts;
 
 
@@ -22,8 +23,22 @@ Vue.use(ElementUI);
 Vue.config.productionTip = false;
 Vue.use(VueCompositionApi);
 
+import {registerMicroApps} from 'qiankun';
+
+registerMicroApps([
+	{
+		name: 'kwaishop-gravity-micro-diagnosis',
+		entry: 'http://localhost:9000/',
+		container: '#test-app',
+		activeRule: '/industryTools',
+	}
+]);
+
+window.__POWERED_BY_QIANKUN__ = true;
+
 new Vue({
-  router,
-  store,
-  render: (h) => h(App),
+	router,
+	store,
+	render: (h) => h(App),
 }).$mount('#app');
+

@@ -6,7 +6,7 @@ Vue.use(VueRouter);
 
 export const constantRouters: RouteConfig[] = [
     {
-        path: '',
+        path: '/',
         component: Layout,
         redirect: 'dashboard',
         children: [{
@@ -48,11 +48,11 @@ export const asyncRouter: RouteConfig[] = [
             }
         ]
     },
-    {
-        path: '*',
-        redirect: '/404',
-        component: () => import('@/views/404.vue')
-    }
+    // {
+    //     path: '*',
+    //     redirect: '/404',
+    //     component: () => import('@/views/404.vue')
+    // }
 ];
 
 // @ts-ignore

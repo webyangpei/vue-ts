@@ -1,8 +1,17 @@
 <template>
-  <div id="app">
+  <div id="admin-app">
     <router-view/>
   </div>
 </template>
+
+<script>
+
+export default {
+  mounted() {
+
+  }
+}
+</script>
 
 <style lang="stylus">
 #app

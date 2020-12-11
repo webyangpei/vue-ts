@@ -18,16 +18,16 @@ async function routerBeforeEach(to: any, from: object, next: any) {
             const status = true;
             if (status) {
                 next();
-                if (store.getters.permission_routers.length === 0) {
-                    store.dispatch('GenerateRoutes').then(() => {
-                        router.addRoutes(store.getters.addRouters);
-                        next({ ...to, replace: true });
-                    }).catch(() => {
-                        MessageBox.alert('验证失败，请重新登录', '登录出错');
-                    });
-                } else {
-                    next();
-                }
+                // if (store.getters.permission_routers.length === 0) {
+                //     store.dispatch('GenerateRoutes').then(() => {
+                //         router.addRoutes(store.getters.addRouters);
+                //         next({ ...to, replace: true });
+                //     }).catch(() => {
+                //         MessageBox.alert('验证失败，请重新登录', '登录出错');
+                //     });
+                // } else {
+                //     next();
+                // }
             }
         }
     } else {

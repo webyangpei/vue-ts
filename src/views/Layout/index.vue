@@ -13,7 +13,10 @@
 			  <el-main>
 				  <NavBar></NavBar>
 				  <TagViews></TagViews>
-				  <AppMain></AppMain>
+          <div id="appContainer">
+            haahah
+          </div>
+<!--				  <AppMain></AppMain>-->
 			  </el-main>
 		  </el-container>
 	  </el-container>
@@ -21,6 +24,8 @@
 </template>
 
 <script lang="ts">
+// 在主应用中注册微应用
+import { start} from 'qiankun';
 import {Component, Vue} from 'vue-property-decorator';
 import {SideBar, AppMain, NavBar, TagViews, Header} from './components/index';
 
@@ -36,6 +41,15 @@ import {SideBar, AppMain, NavBar, TagViews, Header} from './components/index';
 export default class Layout extends Vue {
   get sidebar() {
     return this.$store.state.app.sidebar;
+  }
+
+  mounted() {
+    console.log(3434)
+    this.$nextTick(() => {
+      console.log(document.getElementById('#test-app'), 'dom 存在？')
+      // 启动微应用
+      start();
+    })
   }
 }
 </script>
