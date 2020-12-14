@@ -1,5 +1,6 @@
 <template>
 	<div class="menu-container">
+    <el-button @click="handleClick">跳转</el-button>
     {{ permission_routers }}
 		<el-menu
 			:default-active="$route.path"
@@ -35,6 +36,10 @@
         //   console.log(this.permission_routers, 7777);
         //   return this.permission_routers;
         // }
+
+        private handleClick() {
+          this.$router.push({ name: 'industryTools' })
+        }
     }
 </script>
 

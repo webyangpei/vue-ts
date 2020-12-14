@@ -8,7 +8,6 @@ export const constantRouters: RouteConfig[] = [
     {
         path: '/',
         component: Layout,
-        redirect: 'dashboard',
         children: [{
             path: 'dashboard',
             component: () => import('@/views/dashboard/index.vue'),
@@ -25,7 +24,16 @@ export const constantRouters: RouteConfig[] = [
         path: '/login',
         name: 'Login',
         component: () => import('@/views/Login.vue')
-    }
+    },
+	{
+		path: '/industryTools/workbench',
+		name: 'industryTools',
+		meta: {
+			isMicro: true,
+			title: '行业'
+		},
+		component: Layout
+	}
 ];
 
 export const asyncRouter: RouteConfig[] = [
@@ -47,12 +55,7 @@ export const asyncRouter: RouteConfig[] = [
                 meta: {title: 'orderList'}
             }
         ]
-    },
-    // {
-    //     path: '*',
-    //     redirect: '/404',
-    //     component: () => import('@/views/404.vue')
-    // }
+    }
 ];
 
 // @ts-ignore
