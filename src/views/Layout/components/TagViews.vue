@@ -1,5 +1,5 @@
 <template>
-	<div class="tag-container">this is tag views!</div>
+	<div class="tag-container"></div>
 </template>
 
 <script lang="ts">

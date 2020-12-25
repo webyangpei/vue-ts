@@ -21,7 +21,6 @@
 </template>
 
 <script lang="ts">
-// 在主应用中注册微应用
 import {Component, Vue} from 'vue-property-decorator';
 import {SideBar, AppMain, NavBar, TagViews, Header} from './components/index';
 

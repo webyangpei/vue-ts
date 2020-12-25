@@ -1,19 +1,15 @@
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
-<!--      <router-view :key="key"/>-->
-<!--      <div v-show="$route.meta.isMicro" id="frame"></div>-->
-      <router-view :key="key" id="frame">
-        <div v-show="$route.meta.isMicro"></div>
-        <div v-show="!$route.meta.isMicro" ></div>
-      </router-view>
+      <router-view v-show="!$route.meta.isMicro" :key="key"/>
+      <div v-show="$route.meta.isMicro" id="frame"></div>
     </transition>
   </section>
 </template>
 
 <script>
 // 在主应用中注册微应用
-import startQiankun from '../../../micro';
+// import startQiankun from '../../../micro';
 
 export default {
   name: 'AppMain',
@@ -24,10 +20,9 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      console.log(this.$route.meta.isMicro, 777);
-      startQiankun();
-
-    })
+      // console.log(this.$route.meta.isMicro, 777);
+      // startQiankun();
+    });
   }
 };
 </script>

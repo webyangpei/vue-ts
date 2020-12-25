@@ -6,7 +6,9 @@ import {AppState} from './types';
 import {RootState} from '@/store/types';
 
 export const state: AppState = {
+	// 侧边栏存储 是否展开
     sidebar: '',
+	// 拥有权限的路由
     permission_routers: []
 };
 

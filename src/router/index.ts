@@ -8,6 +8,7 @@ export const constantRouters: RouteConfig[] = [
     {
         path: '/',
         component: Layout,
+		redirect: '/dashboard',
         children: [{
             path: 'dashboard',
             component: () => import('@/views/dashboard/index.vue'),
@@ -25,15 +26,15 @@ export const constantRouters: RouteConfig[] = [
         name: 'Login',
         component: () => import('@/views/Login.vue')
     },
-	{
-		path: '/industryTools/workbench',
-		name: 'industryTools',
-		meta: {
-			isMicro: true,
-			title: '行业'
-		},
-		component: Layout
-	}
+	// {
+	// 	path: '/industryTools/workbench',
+	// 	name: 'industryTools',
+	// 	meta: {
+	// 		isMicro: true,
+	// 		title: '行业'
+	// 	},
+	// 	component: Layout
+	// }
 ];
 
 export const asyncRouter: RouteConfig[] = [
@@ -58,7 +59,6 @@ export const asyncRouter: RouteConfig[] = [
     }
 ];
 
-// @ts-ignore
 const router = new VueRouter({
     mode: 'history',
     base: process.env.PREFIX_URL,

@@ -38,7 +38,7 @@
         // }
 
         private handleClick() {
-          this.$router.push({ name: 'industryTools' })
+          this.$router.push({ name: 'industryTools' });
         }
     }
 </script>

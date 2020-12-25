@@ -1,5 +1,4 @@
 import { ActionTree } from 'vuex';
-import axios from 'axios';
 import { RootState } from '@/store/types';
 import { AppState } from '@/store/app/types';
 import { getUserMenus } from '@/api/user';
@@ -7,20 +6,13 @@ import { asyncRouter } from '@/router';
 import Storage from '@/utils/storage';
 
 export const actions: ActionTree<AppState, RootState> = {
-    fetchData({ commit }): any {
-        axios({
-            url: 'https://....'
-        }).then((response) => {
-            const payload: any = response && response.data;
-            commit('profileLoaded', payload);
-        }, (error) => {
-            console.log(error);
-            commit('profileError');
-        });
-    },
     // 获取动态权限菜单
     GenerateRoutes({ commit }): any {
-        const user = Storage.getItem('user');
+    	return new Promise((resolve, reject) => {
+			commit('SET_ROUTERS', asyncRouter);
+			resolve(1);
+		});
+/*        const user = Storage.getItem('user');
         if (!user) {
             return Promise.reject();
         }
@@ -38,7 +30,7 @@ export const actions: ActionTree<AppState, RootState> = {
                     resolve();
                 }).catch(reject);
             }
-        });
+        });*/
     }
 };
 
