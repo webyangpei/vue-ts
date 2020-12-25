@@ -20,7 +20,7 @@ async function routerBeforeEach(to: any, from: object, next: any) {
 				if (store.getters.permission_routers.length === 0) {
 					store.dispatch('GenerateRoutes').then((res) => {
 						router.addRoutes(store.getters.permission_routers);
-						next({ path: to.path, replace: true });
+						next({path: to.path, replace: true});
 					}).catch((res) => {
 						MessageBox.alert('验证失败，请重新登录', '登录出错');
 					});

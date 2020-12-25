@@ -1,21 +1,21 @@
 <template>
-	<div>
-		<div id="test">ughjklkvhjbkn</div>
-	</div>
+    <div>
+        <div id="test">ughjklkvhjbkn</div>
+    </div>
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from 'vue-property-decorator';
+import {Component, Vue} from 'vue-property-decorator';
 
-    @Component({})
-    export default class Layout extends Vue {
-      private testEcharts: any;
-      private $echarts: any;
+@Component({})
+export default class Layout extends Vue {
+    private testEcharts: any;
+    private $echarts: any;
 
-      private mounted() {
+    private mounted() {
         this.testEcharts = this.$echarts.init(document.getElementById('test'));
-      }
     }
+}
 </script>
 
 <style lang="stylus" type="text/stylus" scoped>
