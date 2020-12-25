@@ -14,10 +14,6 @@
 
       private mounted() {
         this.testEcharts = this.$echarts.init(document.getElementById('test'));
-        // this.$nextTick(() => {
-        //   setTimeout(this.testEcharts.resize);
-        //   this.getEchartsOption();
-        // });
       }
     }
 </script>
