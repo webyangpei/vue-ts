@@ -40,9 +40,8 @@ export const constantRouters: RouteConfig[] = [
 export const asyncRouter: RouteConfig[] = [
     // 用户管理 - 用户权限
     {
-        path: '/user',
+        path: 'user',
         component: Layout,
-        redirect: '/user/user-list',
         name: 'user',
         meta: {
             title: '用户管理',
@@ -53,7 +52,9 @@ export const asyncRouter: RouteConfig[] = [
                 path: 'user-list',
                 component: () => import('@/views/user/userList.vue'),
                 name: 'orderList',
-                meta: {title: 'orderList'}
+                meta: {
+                	title: '用户列表'
+                }
             }
         ]
     }

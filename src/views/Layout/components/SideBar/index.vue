@@ -30,11 +30,6 @@ export default class SideBar extends Vue {
     // 是否展开收起
     private isCollapse: boolean = false;
 
-    // get permission_routers(): any[] {
-    //   console.log(this.permission_routers, 7777);
-    //   return this.permission_routers;
-    // }
-
     private handleClick() {
         this.$router.push({name: 'industryTools'});
     }
