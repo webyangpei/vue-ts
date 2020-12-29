@@ -40,7 +40,7 @@ export const constantRouters: RouteConfig[] = [
 export const asyncRouter: RouteConfig[] = [
     // 用户管理 - 用户权限
     {
-        path: 'user',
+        path: '/user',
         component: Layout,
         name: 'user',
         meta: {

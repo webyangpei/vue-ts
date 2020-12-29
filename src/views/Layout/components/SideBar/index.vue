@@ -10,7 +10,7 @@
             unique-opened
             router
         >
-            <SideBarItem :permission="permission_routers"></SideBarItem>
+            <SideBarItem :permission="permission_routers" base-path="/"></SideBarItem>
         </el-menu>
     </div>
 </template>
