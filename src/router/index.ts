@@ -17,15 +17,15 @@ export const constantRouters: RouteConfig[] = [
         }]
     },
     {
-        path: '/404',
-        name: '404',
-        component: () => import('@/views/404.vue')
-    },
-    {
         path: '/login',
         name: 'Login',
         component: () => import('@/views/Login.vue')
     },
+	{
+		path: '*',
+		name: '404',
+		component: () => import('@/views/404.vue')
+	},
 	// {
 	// 	path: '/industryTools/workbench',
 	// 	name: 'industryTools',
