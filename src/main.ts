@@ -12,7 +12,7 @@ import $echarts from 'echarts';
 
 Vue.prototype.$echarts = $echarts;
 
-window.__POWERED_BY_QIANKUN__ = true;
+(window as any).__POWERED_BY_QIANKUN__ = true;
 // let timer: any = null;
 // timer = setInterval(() => {
 // 	console.log(document.getElementById('#app'), 'have')
