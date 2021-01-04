@@ -11,7 +11,6 @@
                 </el-aside>
                 <!--右侧主体-->
                 <el-main>
-                    <NavBar></NavBar>
                     <TagViews></TagViews>
                     <AppMain></AppMain>
                 </el-main>
@@ -22,13 +21,12 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import {SideBar, AppMain, NavBar, TagViews, Header} from './components/index';
+import {SideBar, AppMain, TagViews, Header} from './components/index';
 
 @Component({
     components: {
         SideBar,
         AppMain,
-        NavBar,
         TagViews,
         Header
     }

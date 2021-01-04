@@ -41,7 +41,6 @@ export default class SideBarItem extends Vue {
 
     // 是否存在子数组
     private hasTrueChildren(item: any) {
-        console.log(item, 999);
         return item && item?.children && Array.isArray(item?.children) && item.children.length;
     }
 

@@ -4,6 +4,12 @@ import Layout from '@/views/Layout/index.vue';
 
 Vue.use(VueRouter);
 
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location: any) {
+	// @ts-ignore
+	return originalPush.call(this, location).catch((err: any): void => err);
+};
+
 export const constantRouters: RouteConfig[] = [
     {
         path: '/',
@@ -43,6 +49,7 @@ export const asyncRouter: RouteConfig[] = [
         path: '/user',
         component: Layout,
         name: 'user',
+		redirect: '/user/user-list',
         meta: {
             title: '用户管理',
             icon: ''
