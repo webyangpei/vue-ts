@@ -1,13 +1,15 @@
 import request from '@/utils/request';
 
+
 /**
- * 获取用户信息
+ * 登录API
  * @param params
+ * @constructor
  */
-export function getUserInfo(params?: any) {
-  return request({
-      url: '/api/list',
-      method: 'get',
-      params
-  });
+export function Login(params?: { username: string, password: string }) {
+	return request({
+		url: '/api/list',
+		method: 'get',
+		params
+	});
 }
