@@ -7,7 +7,7 @@ import * as API_Login from '@/api/login.ts';
 const whiteList: string[] = ['/login'];
 
 async function routerBeforeEach(to: any, from: object, next: any) {
-	const refreshToken: boolean = true;
+	const refreshToken: boolean = !!store.getters.user_info;
 	if (refreshToken) {
 		if (to.path === '/login') {
 			next({path: '/'});

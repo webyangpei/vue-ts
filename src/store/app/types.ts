@@ -12,4 +12,5 @@ export interface Route {
 export interface AppState {
 	sidebar: string;
 	permission_routers?: Route[];
+	user_info: string;
 }
