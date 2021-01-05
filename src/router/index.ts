@@ -17,7 +17,7 @@ export const constantRouters: RouteConfig[] = [
 		redirect: '/dashboard',
         children: [{
             path: 'dashboard',
-            component: () => import('@/views/dashboard/index.vue'),
+            component: () => import('@/views/Dashboard/index.vue'),
             name: 'dashboard',
             meta: {title: 'dashboard', icon: 'dashboard'}
         }]
@@ -57,7 +57,7 @@ export const asyncRouter: RouteConfig[] = [
         children: [
             {
                 path: 'user-list',
-                component: () => import('@/views/user/userList.vue'),
+                component: () => import('@/views/User/userList.vue'),
                 name: 'orderList',
                 meta: {
                 	title: '用户列表'

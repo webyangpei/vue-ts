@@ -9,7 +9,9 @@ export const state: AppState = {
 	// 侧边栏存储 是否展开
     sidebar: '',
 	// 拥有权限的路由
-    permission_routers: []
+    permission_routers: [],
+    // 用户信息
+    user_info: ''
 };
 
 const namespaced: boolean = false;

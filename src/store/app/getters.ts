@@ -9,5 +9,9 @@ export const getters: GetterTree<AppState, RootState> = {
     // 权限数据
     permission_routers(state: AppState): Route[] | undefined {
         return state.permission_routers;
+    },
+    // 权限数据
+    user_info(state: AppState): string {
+        return state.user_info;
     }
 };
