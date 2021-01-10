@@ -17,7 +17,6 @@ const service = axios.create({
 
 // request 拦截
 service.interceptors.request.use((config: AxiosRequestConfig) => {
-    console.log(config, process.env.BASE, 999)
     return config;
 }, (error: any) => {
     return Promise.reject(error);
