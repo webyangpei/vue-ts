@@ -8,8 +8,7 @@ import request from '@/utils/request';
  */
 export function Login(params?: { username: string, password: string }) {
 	return request({
-		url: '/user/login',
-		// url: 'http://localhost:3008/api/user/login',
+		url: '/api/user/login',
 		method: 'get',
 		params
 	});

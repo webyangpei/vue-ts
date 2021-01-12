@@ -9,14 +9,13 @@ import store from '@/store';
 // const qs = require('qs');
 
 const service = axios.create({
-    // baseURL: 'http://localhost:3008/',
-    baseURL: '/api/',
     withCredentials: true, // 允许携带cookie
     timeout: 5000,
 });
 
 // request 拦截
 service.interceptors.request.use((config: AxiosRequestConfig) => {
+	console.log(config, 9999)
     return config;
 }, (error: any) => {
     return Promise.reject(error);
