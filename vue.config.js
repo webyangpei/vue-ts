@@ -15,7 +15,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/api': {
-                target: 'http://admin.webyangpei.com',
+                target: 'http://api.webyangpei.com',
                 ws: true,
 				secure: false,
                 changeOrigin: true
@@ -23,5 +23,6 @@ module.exports = {
         },
         disableHostCheck: true, // 禁用webpack热重载检查 解决热更新失效问题
 		headers: { 'Access-Control-Allow-Origin': '*' },
-    }
+    },
+	publicPath: '/'
 }
