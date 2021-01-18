@@ -15,14 +15,12 @@ const service = axios.create({
 
 // request 拦截
 service.interceptors.request.use((config: AxiosRequestConfig) => {
-	console.log(config, 9999)
     return config;
 }, (error: any) => {
     return Promise.reject(error);
 });
 
 service.interceptors.response.use((response: AxiosResponse) => {
-    console.log(response, 'result');
     return response.data;
 }, (error: AxiosError) => {
     return error;
